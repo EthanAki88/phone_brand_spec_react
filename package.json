@@ -1,0 +1,29 @@
+{
+  "name": "gsmarena-viewer",
+  "version": "1.0.0",
+  "description": "Electron app to view GSMArena-style phone list from database",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "node server.js",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.3.27",
+    "electron-builder": "^24.13.3",
+    "express": "^4.18.2"
+  },
+  "build": {
+    "appId": "com.smartphone.viewer",
+    "productName": "SMART PHONE",
+    "directories": {
+      "output": "dist"
+    },
+    "files": ["main.js", "preload.js", "app/**/*", "lib/**/*"],
+    "win": {
+      "target": ["dir"]
+    }
+  }
+}

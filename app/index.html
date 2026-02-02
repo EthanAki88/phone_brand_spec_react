@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMART PHONE — Browse & compare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2'%3E%3Crect x='5' y='2' width='14' height='20' rx='2'/%3E%3Cline x1='12' y1='18' x2='12' y2='18'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo"><a href="#">SMART PHONE</a></h1>
+      <div class="header-search">
+        <input type="search" id="searchInput" class="search-input" placeholder="Search phones…" autocomplete="off" aria-label="Search phones">
+      </div>
+    </div>
+  </header>
+
+  <div class="updating-overlay hidden" id="updatingOverlay" aria-live="polite">
+    <div class="updating-overlay-inner">
+      <p class="updating-overlay-text">Updating index…</p>
+    </div>
+  </div>
+
+  <div class="app-body">
+    <aside class="left-panel">
+      <ul class="brand-list" id="brandList"></ul>
+    </aside>
+
+  <main class="content">
+    <div class="list-view" id="listView">
+      <div class="makers-head">
+        <div class="makers-head-top">
+          <h1 class="page-title" id="pageTitle">Phones</h1>
+          <div class="sort-links">
+            <a href="#" class="sort-link active" data-sort="year">Time of release</a>
+            <span class="sep">·</span>
+            <a href="#" class="sort-link" data-sort="name">Name</a>
+          </div>
+          <button type="button" class="btn-export-index hidden" id="exportIndexBtn" title="Create file index JSON from database">Update index</button>
+        </div>
+      </div>
+
+      <div class="loading" id="loading">Loading devices…</div>
+      <div class="error hidden" id="error"></div>
+
+      <div id="review-body" class="section-body">
+        <div class="makers">
+          <ul class="phone-list" id="phoneList"></ul>
+          <br class="clear">
+        </div>
+      </div>
+
+      <nav class="pagination" id="pagination"></nav>
+    </div>
+
+    <div class="detail-view hidden" id="detailView">
+      <div class="main main-review">
+        <div class="review-header">
+          <div class="article-info-line page-specs light border-bottom">
+            <a href="#" class="back-to-list" id="backToList">← Back to list</a>
+            <h1 class="specs-phone-name-title" id="detailTitle"></h1>
+          </div>
+        </div>
+        <div class="detail-specs-content" id="detailSpecsContent">
+          <div class="center-stage light nobg specs-accent">
+            <div class="specs-photo-block">
+              <div class="specs-photo-main" id="detailPhoto"></div>
+              <a href="#" class="pictures-button hidden" id="picturesButton">MORE PICTURES</a>
+            </div>
+            <ul class="specs-spotlight-features" id="detailQuickSpecs"></ul>
+          </div>
+          <div id="specs-list" class="specs-list"></div>
+        </div>
+        <div class="detail-pictures-content hidden" id="detailPicturesContent">
+          <h2 class="pictures-page-title" id="detailPicturesTitle"></h2>
+          <p class="pictures-page-subtitle">Official images</p>
+          <div class="pictures-gallery" id="detailPicturesGallery"></div>
+          <a href="#" class="specs-button" id="specsButton">Specifications</a>
+          <button type="button" class="pictures-to-top-btn" id="picturesToTopBtn" aria-label="Scroll to top" title="Back to top">↑</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© SMART PHONE — Local device catalog</p>
+  </footer>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
